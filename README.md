@@ -1,2 +1,3 @@
 # Stock-Insights
-Check stock data by symbol for the da
+Check stock data by symbol for the day
+![Uploading image.png…]()
