@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">StockInsights</string>
+    <string name="company_name">Company Name</string>
+    <string name="company_symbol">Symbol</string>
+    <string name="price">Price</string>
+    <string name="change">Change</string>
+    <string name="volume_average">Average volume</string>
+    <string name="market_cap">Market Cap</string>
+</resources>
