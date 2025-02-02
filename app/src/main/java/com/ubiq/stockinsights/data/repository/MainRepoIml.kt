@@ -5,7 +5,6 @@ import com.ubiq.stockinsights.data.api.MainApiClient
 import com.ubiq.stockinsights.util.RetrofitHelper
 import com.ubiq.stockinsights.util.constants.MAIN_END_POINT
 import kotlinx.coroutines.flow.Flow
-import org.json.JSONArray
 import javax.inject.Inject
 
 class MainRepoIml @Inject constructor(private val client: MainApiClient) : MainRepository {

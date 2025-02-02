@@ -28,16 +28,20 @@ class MainActivity : ComponentActivity() {
             StockInsightsTheme {
                 Scaffold(modifier = Modifier.fillMaxSize(), containerColor = PurpleGrey80) { innerPadding ->
                     StockScreen(modifier = Modifier.padding(innerPadding), viewModel.uiState) {
-                        when(it) {
-                            ClickInterface.Refresh -> {
-                                viewModel.handleRefresh()
-                            }
-                            is ClickInterface.Search -> {
-                                viewModel.handleSearch(it.symbol)
-                            }
-                        }
+                        handleMainUIClicks(it)
                     }
                 }
+            }
+        }
+    }
+
+    private fun handleMainUIClicks(clickInterface: ClickInterface) {
+        when(clickInterface) {
+            ClickInterface.Refresh -> {
+                viewModel.handleRefresh()
+            }
+            is ClickInterface.Search -> {
+                viewModel.handleSearch(clickInterface.symbol)
             }
         }
     }

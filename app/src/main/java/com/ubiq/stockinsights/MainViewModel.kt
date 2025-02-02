@@ -16,7 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(private val mainUseCaseHandler: MainUseCaseHandler) : ViewModel() {
 
-    var currentSymbol = ""
+    private var currentSymbol = ""
 
     private val _uiState = MutableStateFlow(ScreenUIState())
     val uiState: StateFlow<ScreenUIState> = _uiState.asStateFlow()
