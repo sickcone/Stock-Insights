@@ -22,7 +22,7 @@ class MainViewModel @Inject constructor(private val mainUseCaseHandler: MainUseC
     val uiState: StateFlow<ScreenUIState> = _uiState.asStateFlow()
 
     fun handleSearch(symbol: String) {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch {
             _uiState.emit(ScreenUIState(isLoading = true))
             currentSymbol = symbol
             mainUseCaseHandler.mainUseCase.invoke(symbol).collect {
@@ -32,7 +32,7 @@ class MainViewModel @Inject constructor(private val mainUseCaseHandler: MainUseC
     }
 
     fun handleRefresh() {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch {
             _uiState.emit(ScreenUIState(isLoading = true))
             mainUseCaseHandler.mainUseCase.invoke(currentSymbol).collect {
                 handleApiResponse(it)
